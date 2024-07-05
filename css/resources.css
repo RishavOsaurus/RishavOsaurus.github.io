@@ -19,6 +19,8 @@ body {
 
 .sidebar,
 .sidebar-big-width {
+  overflow-y: auto;
+  
   position: absolute;
   display: flex;
   left: -350px;
@@ -197,10 +199,12 @@ background-color: rgb(255, 248, 232);;
 }
 
 .key {
+  color: white;
+  height: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
- background-color: #424B54;
+  background-color: #424B54;
   border: 2px solid #424B54;
   width: 29%;
   max-width: 100px;
@@ -233,6 +237,7 @@ background-color: rgb(255, 248, 232);;
 }
 
 .item:hover .key {
+  color: black;
   background-color: #ffffff;
 }
 
