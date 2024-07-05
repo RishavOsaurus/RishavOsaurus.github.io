@@ -1,33 +1,50 @@
+<!-- Rishav Chapagain -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style/style.css">
-  <title>Rishav Chapagain - Portfolio</title>
-</head>
-<body>
-  <header id="top_row">
-    <nav id="image_holder">
-      <img src="images/sidebar.png" alt="Sidebar Icon" id="sidebar_open">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/resources.css" />
+    <title>Resources</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div id="image_container">
+        <img src="../images/sidebar.png" alt="Sidebar Image" id="sidebar_img" />
+        <a href="index.html"
+          ><img src="../images/logo.png" alt="Sidebar Image" id="logo"
+        /></a>
+      </div>
+      <div id="title_container">
+        <span id="head">PREP-A-TON</span>
+      </div>
     </nav>
-    <div id="github_profile">
-      <a href="https://github.com/RishavOsaurus" target="_blank">
-        <img src="images/github.png" alt="Github Profile">
-      </a>
-    </div>
-  </header>
-  <aside id="sidebar">
-    <ul id="nav_items">
-      <li id="close_button">
-        <img src="images/sidebar_close.png" alt="Close Sidebar" id="sidebar_close">
-      </li>
-      <li>Home</li>
-      <li>About</li>
-      <li>Projects</li>
-      <li>Contact</li
-    </ul>
-  </aside>
-  <script src="script/script.js"></script>
-</body>
+    <aside class="sidebar">
+      <ul class="labels keycontainer">
+        <li class="label-items" id="close_sidebar">
+          <img
+            src="../images/sidebar_close.png"
+            alt="Sidebar Close"
+            id="sidebar_close_img"
+          />
+        </li>
+      
+      </ul>
+    </aside>
+    <aside class="sidebar sidebar-big-width">
+      <ul class="labels labels-big-width keycontainer"></ul>
+    </aside>
+    <main id="main_area">
+      <section id="search">
+        <section id="search-container">
+          <img src="../images/search.svg" alt="Search Image" id="search_img" />
+          <input type="text" id="searchinput" />
+          <button id="go_button">Go</button>
+        </section>
+      </section>
+      <section id="item-container"></section>
+    </main>
+    <script src="../js/resources.js"></script>
+  </body>
 </html>
