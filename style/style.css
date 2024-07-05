@@ -1,0 +1,153 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  margin: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  scroll-behavior: smooth;
+  background-color: #f7f7f7; 
+  color: #333; 
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #0066ff; 
+}
+
+#image_holder {
+  display: flex;
+  align-items: center;
+}
+
+#github_profile img {
+  width: 32px;
+  height: 32px;
+}
+
+#sidebar_open,
+#sidebar_close {
+  cursor: pointer;
+  height: 32px;
+}
+
+/* Sidebar Styles */
+#sidebar {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: -250px;
+  background-color: #0066ff; 
+  transition: left 0.5s ease;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#sidebar.open {
+  left: 0;
+}
+
+#nav_items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#nav_items li {
+  padding: 15px;
+
+  cursor: pointer;
+  color: #333; 
+}
+
+#nav_items li:hover {
+  background-color: #0050cc; 
+  color: #fff; 
+}
+
+#sidebar_close {
+  width: 36px;
+  height: 40px;
+}
+
+#close_button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@media screen and (min-width: 768px) {
+  #image_holder {
+    visibility: hidden;
+  }
+
+  header {
+    justify-content: end;
+  }
+
+  #sidebar {
+    display: flex;
+    width: 250px;
+    left: 0px;
+    top: 56px;
+    transition: none;
+    box-shadow: none;
+    border-right: 2px solid #0050cc;
+    background-color: #f7f7f7;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  #close_button {
+    display: none;
+  }
+
+  body {
+    background-color: #f7f7f7;
+  }
+
+  header {
+    background-color: #0066ff;
+  }
+
+  #nav_items {
+    
+margin-top: 20px;
+    
+list-style-type: none;
+    
+padding: 44px;
+    
+margin: 0;
+    
+display: flex;
+    
+flex-direction: column;
+    
+align-items: center;
+    
+justify-content: center;
+  }
+
+  #nav_items li {
+    width: 100%;
+    padding: 15px 20px; 
+    cursor: pointer;
+    color: #333;
+  }
+  
+
+  #nav_items li:hover {
+    background-color: #ccc;
+
+  }
+}
