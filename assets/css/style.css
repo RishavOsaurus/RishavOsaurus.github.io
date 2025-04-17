@@ -110,9 +110,7 @@ body.light_theme {
 
 
 
-/*-----------------------------------*\
- * #RESET
-\*-----------------------------------*/
+
 
 *, *::before, *::after {
   margin: 0;
@@ -1328,7 +1326,14 @@ textarea.input-field {
   /**
    * REUSED STYLE
    */
-
+   body.light_theme .contact .btn-primary {
+    color: var(--bg-secondary) !important; /* Use white/light color for text */
+    background: var(--color-primary); /* Keep the dark background */
+  }
+  
+  body.light_theme .contact .btn-primary:is(:hover, :focus) {
+    color: var(--bg-secondary) !important; /* Keep text white/light on hover */
+  }
   .container { max-width: 1150px; }
 
   .section-title { max-width: 460px; }
