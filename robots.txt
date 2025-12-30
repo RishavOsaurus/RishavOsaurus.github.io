@@ -1,0 +1,15 @@
+# Applies to all web crawlers
+User-agent: *
+
+# Directories to block from crawlers
+Disallow: /admin/
+Disallow: /login/
+Disallow: /private/
+Disallow: /temp/
+
+# Explicitly allow important paths
+Allow: /waka/worldcup/
+Allow: /waka/conf/
+
+# Sitemap location
+Sitemap: https://crishav.com.np/waka/sitemap.xml
