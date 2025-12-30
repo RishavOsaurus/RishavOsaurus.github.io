@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
   <url>
-    <loc>https://crishav.com.np/</loc>
-    <lastmod>2025-04-17</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://crishav.com.np/waka/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- World Cup page -->
   <url>
-    <loc>https://crishav.com.np/conf</loc>
-    <lastmod>2025-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://crishav.com.np/waka/worldcup/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
+
+  <!-- Conf page -->
+  <url>
+    <loc>https://crishav.com.np/waka/conf</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
