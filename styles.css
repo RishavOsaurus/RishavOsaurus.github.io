@@ -1,0 +1,171 @@
+/* Rishav Chapagain, portfolio.
+   Design tokens from the Neo-Brutalist design system, then page rules.
+   Component styling is inline on the elements, per that system. */
+
+/* tokens/fonts.css */
+/* Archivo Black + Archivo are SUBSTITUTIONS for the source sheet's display face.
+   No font binaries were supplied with the kit. See readme.md > Typography. */
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap");
+
+:root {
+  --font-display: "Archivo Black", "Arial Black", Helvetica, sans-serif;
+  --font-body: "Archivo", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* tokens/colors.css */
+:root {
+  /* Base palette — exactly the six tokens on the source sheet */
+  --accent-teal: #00C2CB;
+  --accent-magenta: #FF00FF;
+  --accent-yellow: #FFD700;
+  --black: #000000;
+  --white: #FFFFFF;
+  --paper-beige: #F5F5DC;
+
+  /* Derived neutrals (screen-tint only; never used as fills for accents) */
+  --ink-muted: #5A5A50;
+  --grey-fill: #C9C9C2;
+  --grey-panel: #7A7A72;
+  --grey-dark: #3A3A36;
+  --disabled-fill: #DCDCD2;
+  --disabled-ink: #9A9A90;
+
+  /* Semantic aliases */
+  --surface-page: var(--paper-beige);
+  --surface-card: var(--white);
+  --surface-inverse: var(--black);
+  --surface-panel: var(--grey-panel);
+
+  --text-body: var(--black);
+  --text-inverse: var(--white);
+  --text-muted: var(--ink-muted);
+  --text-disabled: var(--disabled-ink);
+  --text-link: var(--black);
+
+  --action-primary: var(--accent-teal);
+  --action-primary-ink: var(--black);
+  --action-secondary: transparent;
+  --action-destructive: var(--accent-magenta);
+  --action-destructive-soft: #FFA07A;
+
+  --state-success: var(--accent-teal);
+  --state-warning: var(--accent-yellow);
+  --state-error: var(--accent-magenta);
+  --state-info: var(--white);
+
+  --focus-ring: var(--accent-yellow);
+  --stroke: var(--black);
+}
+
+/* tokens/typography.css */
+:root {
+  /* Type scale — verbatim from the source sheet */
+  --size-h1: 96px;
+  --size-h2: 64px;
+  --size-h3: 48px;
+  --size-h4: 32px;
+  --size-body: 18px;
+  --size-caption: 14px;
+  --size-micro: 12px;
+
+  --leading-display: 0.92;
+  --leading-heading: 1.0;
+  --leading-body: 1.45;
+
+  --tracking-display: -0.02em;
+  --tracking-label: 0.02em;
+  --tracking-caps: 0.06em;
+
+  --weight-display: 400;   /* Archivo Black has one weight */
+  --weight-bold: 800;
+  --weight-heavy: 900;
+  --weight-regular: 400;
+
+  /* Semantic type roles */
+  --text-h1: var(--weight-display) var(--size-h1)/var(--leading-display) var(--font-display);
+  --text-h2: var(--weight-display) var(--size-h2)/var(--leading-display) var(--font-display);
+  --text-h3: var(--weight-display) var(--size-h3)/var(--leading-heading) var(--font-display);
+  --text-h4: var(--weight-display) var(--size-h4)/var(--leading-heading) var(--font-display);
+  --text-label: var(--weight-heavy) var(--size-caption)/1.2 var(--font-body);
+  --text-copy: var(--weight-regular) var(--size-body)/var(--leading-body) var(--font-body);
+  --text-caption-role: var(--weight-bold) var(--size-caption)/1.35 var(--font-body);
+}
+
+/* tokens/spacing.css */
+:root {
+  /* Spacing scale — verbatim from the source sheet ruler */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  --gutter-section: var(--space-6);
+  --gutter-card: var(--space-4);
+  --gutter-inline: var(--space-3);
+  --hit-area-min: 44px;
+}
+
+/* tokens/borders.css */
+:root {
+  /* Thick black strokes, squared corners, limited radii */
+  --stroke-hairline: 1px;
+  --stroke-thin: 2px;
+  --stroke-base: 3px;
+  --stroke-thick: 4px;
+
+  --border-base: var(--stroke-base) solid var(--stroke);
+  --border-thick: var(--stroke-thick) solid var(--stroke);
+
+  --radius-0: 0px;
+  --radius-1: 4px;   /* buttons, inputs, cards, badges */
+  --radius-2: 8px;   /* panels, modals */
+  --radius-pill: 999px; /* avatars, switch knob, step dots only */
+}
+
+/* tokens/elevation.css */
+:root {
+  /* Hard-offset shadows only. No blur, no alpha. */
+  --shadow-0: none;
+  --shadow-1: 4px 4px 0 0 var(--black);
+  --shadow-2: 12px 12px 0 0 var(--black);
+  --shadow-inset-press: inset 2px 2px 0 0 rgba(0,0,0,0.35);
+  --focus-outline: 3px solid var(--focus-ring);
+  --focus-offset: 2px;
+}
+
+/* tokens/motion.css */
+:root {
+  /* Motion is mechanical: short, linear-ish, no bounce, no fade-only transitions */
+  --duration-instant: 0ms;
+  --duration-fast: 80ms;
+  --duration-base: 120ms;
+  --ease-mechanical: steps(1, end);
+  --ease-default: cubic-bezier(0.2, 0, 0.2, 1);
+  --press-translate: 2px;
+}
+
+
+/* page rules */
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper-beige); color: var(--black); font-family: var(--font-body); }
+  a { color: var(--black); }
+  a:hover { background: var(--accent-yellow); }
+  :focus-visible { outline: 3px solid var(--accent-yellow); outline-offset: 2px; }
+  ::selection { background: var(--accent-magenta); color: var(--black); }
+  /* media queries cannot be expressed inline */
+  .pgrid { display: grid; gap: 24px; grid-template-columns: 1fr; align-items: stretch; grid-auto-flow: dense; }
+  @media (min-width: 760px) { .pgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .pgrid > .feat { grid-column: span 2; } }
+  @media (min-width: 1100px) { .pgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .pgrid > .feat { grid-column: span 2; } }
+  .hero { display: grid; gap: 32px; grid-template-columns: 1fr; align-items: start; }
+  @media (min-width: 900px) { .hero { grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; } }
+
+
+[hidden] { display: none !important; }
