@@ -23,6 +23,11 @@
     modal.style.display = open ? "flex" : "none";
     document.body.style.overflow = open ? "hidden" : "";
     if (open) {
+      var frame = modal.querySelector("iframe[data-src]");
+      if (frame) {
+        frame.src = frame.getAttribute("data-src");
+        frame.removeAttribute("data-src");
+      }
       var close = modal.querySelector("[data-cv-close]");
       if (close) close.focus();
     }

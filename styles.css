@@ -4,8 +4,13 @@
 
 /* tokens/fonts.css */
 /* Archivo Black + Archivo are SUBSTITUTIONS for the source sheet's display face.
-   No font binaries were supplied with the kit. See readme.md > Typography. */
-@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap");
+   No font binaries were supplied with the kit. See readme.md > Typography.
+   Loaded via <link rel="stylesheet"> in index.html <head>, not @import here,
+   so the browser can start the font request in parallel with this file instead
+   of discovering it only after this stylesheet has been fetched and parsed.
+   Only the weights actually used on the page are requested (400/700/900);
+   JetBrains Mono is defined below as a token but isn't applied anywhere yet,
+   so it isn't fetched. */
 
 :root {
   --font-display: "Archivo Black", "Arial Black", Helvetica, sans-serif;
@@ -15,7 +20,7 @@
 
 /* tokens/colors.css */
 :root {
-  /* Base palette — exactly the six tokens on the source sheet */
+  /* Base palette: exactly the six tokens on the source sheet */
   --accent-teal: #00C2CB;
   --accent-magenta: #FF00FF;
   --accent-yellow: #FFD700;
@@ -60,7 +65,7 @@
 
 /* tokens/typography.css */
 :root {
-  /* Type scale — verbatim from the source sheet */
+  /* Type scale: verbatim from the source sheet */
   --size-h1: 96px;
   --size-h2: 64px;
   --size-h3: 48px;
@@ -94,7 +99,7 @@
 
 /* tokens/spacing.css */
 :root {
-  /* Spacing scale — verbatim from the source sheet ruler */
+  /* Spacing scale: verbatim from the source sheet ruler */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -155,7 +160,7 @@
 
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--paper-beige); color: var(--black); font-family: var(--font-body); }
+  body { margin: 0; min-height: 100vh; background: var(--paper-beige); color: var(--black); font-family: var(--font-body); }
   a { color: var(--black); }
   a:hover { background: var(--accent-yellow); }
   :focus-visible { outline: 3px solid var(--accent-yellow); outline-offset: 2px; }
