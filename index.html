@@ -124,19 +124,25 @@
 </head>
 <body>
 
-  <header style="position: sticky; top: 0; z-index: 50; background: var(--paper-beige); border-bottom: 4px solid var(--black);">
+  <header style="background: var(--paper-beige); border-bottom: 4px solid var(--black);">
     <nav style="max-width: 1180px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px 24px;">
       <a href="#top" style="display: inline-flex; align-items: center; min-height: 36px; font: 400 20px/1 var(--font-display); letter-spacing: -0.02em; text-transform: uppercase; text-decoration: none; padding: 4px 6px; margin-left: -6px;">RC<span style="color: var(--accent-magenta);">.</span></a>
-      <ul style="display: flex; flex-wrap: wrap; gap: 4px 8px; list-style: none; margin: 0; padding: 0;">
+      <button type="button" id="nav-toggle" class="hamburger-btn" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu" style="align-items: center; justify-content: center; width: 44px; min-height: 36px; background: var(--white); border: 3px solid var(--black); border-radius: 4px; box-shadow: 4px 4px 0 0 var(--black); font: 900 16px/1 var(--font-body); cursor: pointer;">&#9776;</button>
+      <ul id="nav-menu" class="nav-menu" style="flex-wrap: wrap; gap: 4px 8px; list-style: none; margin: 0; padding: 0;">
         <li><a href="#work" style="display: inline-flex; align-items: center; min-height: 36px; padding: 6px 10px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 3px solid transparent; border-radius: 4px;">Work</a></li>
         <li><a href="#research" style="display: inline-flex; align-items: center; min-height: 36px; padding: 6px 10px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 3px solid transparent; border-radius: 4px;">Research</a></li>
         <li><a href="#about" style="display: inline-flex; align-items: center; min-height: 36px; padding: 6px 10px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 3px solid transparent; border-radius: 4px;">About</a></li>
         <li><a href="#stack" style="display: inline-flex; align-items: center; min-height: 36px; padding: 6px 10px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 3px solid transparent; border-radius: 4px;">Stack</a></li>
         <li><a href="#experience" style="display: inline-flex; align-items: center; min-height: 36px; padding: 6px 10px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 3px solid transparent; border-radius: 4px;">Experience</a></li>
-        <li><a href="#community" style="display: inline-flex; align-items: center; min-height: 36px; padding: 6px 10px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 3px solid transparent; border-radius: 4px;">Community</a></li>
-        <li><a href="#education" style="display: inline-flex; align-items: center; min-height: 36px; padding: 6px 10px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 3px solid transparent; border-radius: 4px;">Education</a></li>
-        <li><a href="#writing" style="display: inline-flex; align-items: center; min-height: 36px; padding: 6px 10px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 3px solid transparent; border-radius: 4px;">Writing</a></li>
-        <li><a href="#faq" style="display: inline-flex; align-items: center; min-height: 36px; padding: 6px 10px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 3px solid transparent; border-radius: 4px;">FAQ</a></li>
+        <li class="more-item" style="position: relative;">
+          <button type="button" class="more-toggle" aria-expanded="false" aria-controls="more-menu" style="align-items: center; min-height: 36px; padding: 6px 10px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; border: 3px solid transparent; border-radius: 4px; background: transparent; cursor: pointer;">More &#9662;</button>
+          <ul id="more-menu" class="more-menu" style="list-style: none; margin: 0; padding: 0; gap: 2px;">
+            <li><a href="#community" style="display: flex; padding: 8px 10px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 4px;">Community</a></li>
+            <li><a href="#education" style="display: flex; padding: 8px 10px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 4px;">Education</a></li>
+            <li><a href="#writing" style="display: flex; padding: 8px 10px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 4px;">Writing</a></li>
+            <li><a href="#faq" style="display: flex; padding: 8px 10px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 4px;">FAQ</a></li>
+          </ul>
+        </li>
         <li><button type="button" data-cv-open="1" style="display: inline-flex; align-items: center; min-height: 36px; padding: 6px 10px; background: var(--accent-yellow); border: 3px solid var(--black); border-radius: 4px; box-shadow: 4px 4px 0 0 var(--black); font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;">View CV</button></li>
         <li><a href="#contact" style="display: inline-flex; align-items: center; min-height: 36px; padding: 6px 12px; font: 900 12px/1 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; background: var(--accent-teal); border: 3px solid var(--black); border-radius: 4px; box-shadow: 4px 4px 0 0 var(--black);">Contact</a></li>
       </ul>

@@ -172,5 +172,36 @@
   .hero { display: grid; gap: 32px; grid-template-columns: 1fr; align-items: start; }
   @media (min-width: 900px) { .hero { grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; } }
 
+  /* nav: mobile-first hamburger with everything flattened into one list;
+     desktop gets a horizontal bar with a "More" dropdown for overflow. */
+  .hamburger-btn { display: flex; }
+  .nav-menu { display: none; flex-direction: column; width: 100%; }
+  .nav-menu.open { display: flex; }
+  .nav-menu > li { width: 100%; }
+  .nav-menu > li > a, .nav-menu > li > button { width: 100%; }
+  .more-toggle { display: none; }
+  .more-menu { display: flex; flex-direction: column; padding-left: 18px; }
+  @media (min-width: 900px) {
+    .hamburger-btn { display: none; }
+    .nav-menu { display: flex !important; flex-direction: row; align-items: center; width: auto; }
+    .nav-menu > li { width: auto; }
+    .nav-menu > li > a, .nav-menu > li > button { width: auto; }
+    .more-toggle { display: flex; }
+    .more-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 6px;
+      padding: 8px;
+      background: var(--white);
+      border: 3px solid var(--black);
+      border-radius: 4px;
+      box-shadow: 4px 4px 0 0 var(--black);
+      min-width: 180px;
+      z-index: 60;
+    }
+    .more-item.open > .more-menu { display: flex; }
+  }
 
 [hidden] { display: none !important; }

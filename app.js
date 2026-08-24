@@ -1,9 +1,25 @@
-/* Portfolio interactions: project details, CV dialog. No dependencies. */
+/* Portfolio interactions: project details, CV dialog, nav menu. No dependencies. */
 (function () {
   "use strict";
 
   var openId = null;
   var modal = document.getElementById("cv-modal");
+  var navToggle = document.getElementById("nav-toggle");
+  var navMenu = document.getElementById("nav-menu");
+  var moreItem = document.querySelector(".more-item");
+  var moreToggle = document.querySelector(".more-toggle");
+
+  function setNavOpen(open) {
+    if (!navToggle || !navMenu) return;
+    navMenu.classList.toggle("open", open);
+    navToggle.setAttribute("aria-expanded", String(open));
+  }
+
+  function setMoreOpen(open) {
+    if (!moreItem || !moreToggle) return;
+    moreItem.classList.toggle("open", open);
+    moreToggle.setAttribute("aria-expanded", String(open));
+  }
 
   function setOpen(id) {
     openId = openId === id ? null : id;
@@ -39,11 +55,44 @@
     if (e.target.closest("[data-cv-open]")) { setCv(true); return; }
     if (e.target.closest("[data-cv-close]")) { setCv(false); return; }
     if (modal && !modal.hidden && e.target === modal) setCv(false);
+
+    if (navToggle && e.target.closest("#nav-toggle")) {
+      setNavOpen(!navMenu.classList.contains("open"));
+      return;
+    }
+    if (moreToggle && e.target.closest(".more-toggle")) {
+      setMoreOpen(!moreItem.classList.contains("open"));
+      return;
+    }
+    if (navMenu && navMenu.classList.contains("open") && e.target.closest("#nav-menu a")) {
+      setNavOpen(false);
+    }
+    if (moreItem && moreItem.classList.contains("open") && e.target.closest(".more-menu a")) {
+      setMoreOpen(false);
+      return;
+    }
+    if (moreItem && moreItem.classList.contains("open") && !e.target.closest(".more-item")) {
+      setMoreOpen(false);
+    }
   });
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && modal && !modal.hidden) setCv(false);
+    if (e.key !== "Escape") return;
+    if (modal && !modal.hidden) setCv(false);
+    setNavOpen(false);
+    setMoreOpen(false);
   });
+
+  var desktopQuery = window.matchMedia("(min-width: 900px)");
+  function closeMenus() {
+    setNavOpen(false);
+    setMoreOpen(false);
+  }
+  if (desktopQuery.addEventListener) {
+    desktopQuery.addEventListener("change", closeMenus);
+  } else if (desktopQuery.addListener) {
+    desktopQuery.addListener(closeMenus);
+  }
 
   setOpen(null);
 })();
